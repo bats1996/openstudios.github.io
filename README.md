@@ -1,2 +1,2 @@
 # openstudios.github.io
-Test for AR geo location open studios
+Test for AR geo-location open studios
