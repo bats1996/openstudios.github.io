@@ -12,7 +12,7 @@ function staticLoadPlaces() {
     //            lng: -0.130380,
     //        }
         {
-            name: 'Flag'
+            name: 'Flag',
             location: {
                 lat: 51.544020,
                 lng: -0.130380,
