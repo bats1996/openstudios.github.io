@@ -132,7 +132,7 @@
         {
             "mimeType" : "image/jpeg",
             "name" : "flag",
-            "uri" : "flag.jpg"
+            "uri" : "textures/flag.jpg"
         }
     ],
     "accessors" : [
@@ -310,7 +310,7 @@
     "buffers" : [
         {
             "byteLength" : 133064,
-            "uri" : "flag2.bin"
+            "uri" : "scene.bin"
         }
     ]
 }
