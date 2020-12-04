@@ -132,7 +132,7 @@
         {
             "mimeType" : "image/jpeg",
             "name" : "flag",
-            "uri" : "textures/flag.jpg"
+            "uri" : "./assets/flag/textures/flag.jpg"
         }
     ],
     "accessors" : [
