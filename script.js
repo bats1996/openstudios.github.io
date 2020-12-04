@@ -20,7 +20,7 @@ function staticLoadPlaces() {
 
 var models = [
     {
-        url: './assets/flag/flag2.gltf',
+        url: './assets/flag/scene.gltf',
         scale: '0.5 0.5 0.5',
         info: 'Statement by Bea Taylor Searle',
         rotation: '0 180 0',
