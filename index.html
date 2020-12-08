@@ -26,7 +26,7 @@
                 id="animated-asset-cat"
                 src="assets/asset-cat.gltf"
               ></a-asset-item>
-              
+
               <video
                 src="assets/asset.mp4"
                 preload="auto"
@@ -48,6 +48,29 @@
                     scale="0.6370638039550472 0.6370638039550472 0.6370638039550472"
                     gps-entity-place="latitude: 51.535565; longitude: -0.125628;"
                 ></a-entity>
+
+                <a-entity
+                    look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset-cat"
+                    scale="2.2957866146019565 2.2957866146019565 2.2957866146019565"
+                    gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
+              ></a-entity>
+        
+              <a-video
+                    src="#vid"
+                    position="0 0.1 0"
+                    rotation="-90 0 0"
+                    look-at="[gps-camera]"
+                    videohandler
+                    smooth="true"
+                    smoothCount="10"
+                    smoothTolerance="0.01"
+                    smoothThreshold="5"
+                    autoplay="false"
+                    scale="1 1 1"
+                    gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
+              ></a-video>
 
                 <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera='gpsMinDistance: 5' ></a-camera>
         </a-scene>
