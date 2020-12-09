@@ -32,13 +32,21 @@
                 preload="auto"
                 id="vid"
                 response-type="arraybuffer"
-                loop
+                loop="true"
                 crossorigin
                 webkit-playsinline
-                autoplay
-                muted
+                autoplay ="true"
+                muted="false"
                 playsinline
               ></video>
+
+              <sound 
+                src="assets/asset.mp3"
+                preload="auto" 
+                id="sound"
+                autoplay="true" 
+              ><sound>
+
             </a-assets>
 
                 <a-entity
@@ -71,6 +79,13 @@
                     scale="1 1 1"
                     gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
               ></a-video>
+
+              <a-sound 
+                src="#sound"
+                position="0 0.1 0"
+                autoplay="true"
+                gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
+              ></a-sound>
 
                 <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera='gpsMinDistance: 5' ></a-camera>
         </a-scene>
