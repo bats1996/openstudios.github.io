@@ -1,93 +1,37 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            renderer="logarithmicDepthBuffer: true;"
-            embedded
-            loading-screen="enabled: false;"
-            arjs="sourceType: webcam; debugUIEnabled: false;"
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="./assets/asset.glb"
-                ></a-asset-item>
+  <title>Off the grid - open studios</title>
+  
+</head>
 
-                <a-asset-item
-                id="animated-asset-cat"
-                src="assets/asset-cat.gltf"
-              ></a-asset-item>
+<body>
+    <div class="container">
+        <h1>are</h1> 
+        <h1>you</h1> 
+        <h1>near</h1> 
+        <h1>granary</h1> 
+        <h1>square?</h1>
+    </div>
 
-              <video
-                src="assets/asset.mp4"
-                preload="auto"
-                id="vid"
-                response-type="arraybuffer"
-                loop="true"
-                crossorigin
-                webkit-playsinline
-                autoplay ="true"
-                muted="false"
-                playsinline
-              ></video>
-
-              <sound 
-                src="assets/asset.mp3"
-                preload="auto" 
-                id="sound"
-                autoplay="true" 
-              ><sound>
-
-            </a-assets>
-
-                <a-entity
-                    look-at="[gps-camera]"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    scale="0.6370638039550472 0.6370638039550472 0.6370638039550472"
-                    gps-entity-place="latitude: 51.535565; longitude: -0.125628;"
-                ></a-entity>
-
-                <a-entity
-                    look-at="[gps-camera]"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset-cat"
-                    scale="2.2957866146019565 2.2957866146019565 2.2957866146019565"
-                    gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
-              ></a-entity>
-        
-              <a-video
-                    src="#vid"
-                    position="0 0.1 0"
-                    rotation="-90 0 0"
-                    look-at="[gps-camera]"
-                    videohandler
-                    smooth="true"
-                    smoothCount="10"
-                    smoothTolerance="0.01"
-                    smoothThreshold="5"
-                    autoplay="false"
-                    scale="1 1 1"
-                    gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
-              ></a-video>
-
-              <a-sound 
-                src="#sound"
-                position="0 0.1 0"
-                autoplay="true"
-                gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
-              ></a-sound>
-
-                <a-camera look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera='gpsMinDistance: 5' ></a-camera>
-        </a-scene>
-    </body>
-</html>
+    <div class="center">
+        <div class="row">
+            <div class="col-sm-2">
+                <a href="ar.html">
+                    <button class="buttonYes" type="button">Yes!</button>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="model.html">
+                    <button class="buttonNo" type="button">No :(</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
