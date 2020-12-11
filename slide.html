@@ -46,7 +46,7 @@
             </button>
         
             <div id="ar-prompt">
-                <img src="../../assets/asset-flag.png">
+                <img src="assets/asset-flag.png">
             </div>
         
             <div class="slider">
@@ -69,7 +69,7 @@
             const modelViewer = document.querySelector("model-viewer");
         
             window.switchSrc = (element, name) => {
-            const base = "../../assets/" + name;
+            const base = "assets/" + name;
             modelViewer.src = base + '.glb';
             modelViewer.poster = base + '.png';
             const slides = document.querySelectorAll(".slide");
