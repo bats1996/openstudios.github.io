@@ -1,177 +1,86 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="slide.css">
 
-  <!-- Import the component -->
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        <!-- Import the component -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
-  <title>Off the grid - model viewer</title>
-  
-</head>
+        <title>Off the grid - model viewer</title>
+    
+    </head>
 
-<model-viewer src="assets/asset-flag.glb" ar-modes="webxr scene-viewer quick-look" ar-scale="auto" shadow-intensity="1" ar ar-scale="fixed" camera-controls alt="A 3D model carousel">
-  
-    <button slot="ar-button" id="ar-button">
-      View in your space
-    </button>
-  
-    <div id="ar-prompt">
-      <img src="../../assets/flag.png">
-    </div>
-  
-    <div class="slider">
-      <div class="slides">
-        <button class="slide selected" onclick="switchSrc(this, 'asset-flag')" style="background-image: url('../../assets/asset-flag.png');">
-  
-        </button><button class="slide" onclick="switchSrc(this, 'asset-cat')" style="background-image: url('../../assets/asset-cat.png');">
-  
-        </button><button class="slide" onclick="switchSrc(this, 'asset-julia')" style="background-image: url('../../assets/asset-julia.png');">
+    <body>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="#">Title:</a>
+            <a href="#">Name</a>
+            <a href="#">Bio/Info/Whatever</a>
+            <a href="#">Social Media or Website</a>
+        </div>
         
-        </button><button class="slide" onclick="switchSrc(this, 'ToyTrain')" style="background-image: url('../../assets/ShopifyModels/ToyTrain.png');">
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">☰ More Info</button>  
+        </div>
+
+        <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "40%";
+        }
         
-        </button><button class="slide" onclick="switchSrc(this, 'Canoe')" style="background-image: url('../../assets/ShopifyModels/Canoe.png');">    
-      </button></div>
-    </div>
-  </model-viewer>
-  
-  <script type="module">
-    const modelViewer = document.querySelector("model-viewer");
-  
-    window.switchSrc = (element, name) => {
-      const base = "../../assets/" + name;
-      modelViewer.src = base + '.glb';
-      modelViewer.poster = base + '.png';
-      const slides = document.querySelectorAll(".slide");
-      slides.forEach((element) => {element.classList.remove("selected");});
-      element.classList.add("selected");
-    };
-  
-    document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
-      // Keep slider interactions from affecting the XR scene.
-      ev.preventDefault();
-    });
-  </script>
-  
-  <style>
-    /* This keeps child nodes hidden while the element loads */
-    :not(:defined) > * {
-      display: none;
-    }
-  
-    model-viewer {
-      background-color: #eee;
-      overflow-x: hidden;
-      --poster-color: #eee;
-      height: 100%;
-      width: 60%;
-    }
-  
-    #ar-button {
-      background-image: url(../../assets/ic_view_in_ar_new_googblue_48dp.png);
-      background-repeat: no-repeat;
-      background-size: 20px 20px;
-      background-position: 12px 50%;
-      background-color: #fff;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      bottom: 132px;
-      padding: 0px 16px 0px 40px;
-      font-family: Roboto Regular, Helvetica Neue, sans-serif;
-      font-size: 14px;
-      color:#4285f4;
-      height: 36px;
-      line-height: 36px;
-      border-radius: 18px;
-      border: 1px solid #DADCE0;
-    }
-  
-    #ar-button:active {
-      background-color: #E8EAED;
-    }
-  
-    #ar-button:focus {
-      outline: none;
-    }
-  
-    #ar-button:focus-visible {
-      outline: 1px solid #4285f4;
-    }
-  
-    @keyframes circle {
-      from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
-      to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
-    }
-  
-    @keyframes elongate {
-      from { transform: translateX(100px); }
-      to   { transform: translateX(-100px); }
-    }
-  
-    model-viewer > #ar-prompt {
-      position: absolute;
-      left: 50%;
-      bottom: 175px;
-      animation: elongate 2s infinite ease-in-out alternate;
-      display: none;
-    }
-  
-    model-viewer[ar-status="session-started"] > #ar-prompt {
-      display: block;
-    }
-  
-    model-viewer > #ar-prompt > img {
-      animation: circle 4s linear infinite;
-    }
-  
-    .slider {
-      width: 100%;
-      text-align: center;
-      overflow: hidden;
-      position: absolute;
-      bottom: 16px;
-    }
-  
-    .slides {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-    }
-  
-    .slide {
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      width: 100px;
-      height: 100px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: #fff;
-      margin-right: 10px;
-      border-radius: 10px;
-      border: none;
-      display: flex;
-    }
-  
-    .slide.selected {
-      border: 2px solid #4285f4;
-    }
-  
-    .slide:focus {
-      outline: none;
-    }
-  
-    .slide:focus-visible {
-      outline: 1px solid #4285f4;
-    }
-  
-  </style>
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            }
+        </script>
+
+
+        <model-viewer src="assets/asset-flag.glb" ar-modes="webxr scene-viewer quick-look" ar-scale="auto" shadow-intensity="1" ar ar-scale="fixed" camera-controls alt="A 3D model carousel">
+    
+            <button slot="ar-button" id="ar-button">
+            View in your space
+            </button>
+        
+            <div id="ar-prompt">
+                <img src="../../assets/flag.png">
+            </div>
+        
+            <div class="slider">
+                <div class="slides">
+                    <button class="slide selected" onclick="switchSrc(this, 'asset-flag')" style="background-image: url('../../assets/asset-flag.png');">
+            
+                    </button><button class="slide" onclick="switchSrc(this, 'asset-cat')" style="background-image: url('../../assets/asset-cat.png');">
+            
+                    </button><button class="slide" onclick="switchSrc(this, 'asset-julia')" style="background-image: url('../../assets/asset-julia.png');">
+                    
+                    </button><button class="slide" onclick="switchSrc(this, 'asset-india')" style="background-image: url('../../assets/asset-india.png');">
+                    
+                    </button><button class="slide" onclick="switchSrc(this, 'Canoe')" style="background-image: url('../../assets/ShopifyModels/Canoe.png');">    
+                    </button>
+                </div>
+            </div>
+        </model-viewer>
+    
+        <script type="module">
+            const modelViewer = document.querySelector("model-viewer");
+        
+            window.switchSrc = (element, name) => {
+            const base = "../../assets/" + name;
+            modelViewer.src = base + '.glb';
+            modelViewer.poster = base + '.png';
+            const slides = document.querySelectorAll(".slide");
+            slides.forEach((element) => {element.classList.remove("selected");});
+            element.classList.add("selected");
+            };
+        
+            document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+            // Keep slider interactions from affecting the XR scene.
+            ev.preventDefault();
+            });
+        </script>
+    </body>
+</html> 
