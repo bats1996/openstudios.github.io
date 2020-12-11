@@ -29,6 +29,11 @@
                 src="assets/asset-cat.gltf"
               ></a-asset-item>
 
+                <a-asset-item
+                id="india-asset"
+                src="assets/asset-india.glb"
+                ></a-asset-item>
+
               <video
                 src="assets/asset.mp4"
                 preload="auto"
@@ -63,6 +68,14 @@
                     look-at="[gps-camera]"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset-cat"
+                    scale="2.2957866146019565 2.2957866146019565 2.2957866146019565"
+                    gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
+              ></a-entity>
+
+              <a-entity
+                    look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#india-asset"
                     scale="2.2957866146019565 2.2957866146019565 2.2957866146019565"
                     gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
               ></a-entity>
