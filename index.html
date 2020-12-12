@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/addons/p5.sound.min.js"></script>
   <title>Off the grid - open studios</title>
   
 </head>
@@ -22,10 +25,38 @@
 
         
             <div class="row">
-                <a class="btn btn-secondary" href="ar.html" role="button">YES!</a>
+                <a id= "granarySquare" class="btn btn-secondary" href="ar.html" role="button">YES!</a>
                                 
                 <a class="btn btn-secondary" href="slide.html" role="button">No :(</a>
             </div>
+
+          <script>
+            let granaryLat = 51.535765;
+            let granaryLon = -0.125017;
+
+            function setup() {
+              console.log('starting');
+              noStroke();
+              // get position once
+              if (!navigator.geolocation) {
+                alert("navigator.geolocation is not available");
+              }
+              navigator.geolocation.getCurrentPosition(setPos);
+            }
+
+            function setPos(position) {
+              var viewerLat = position.coords.latitude;
+              var viewerLon = position.coords.longitude;
+                
+              if (dist(granaryLat,granaryLon,viewerLat,viewerLon)>100){
+              document.getElementById("granarySquare").disabled = true;
+              } else {
+              document.getElementById("granarySquare").disabled = false;
+              }
+            }
+          </script>
+</body>
+
         
     
 

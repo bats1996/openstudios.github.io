@@ -30,6 +30,11 @@
               ></a-asset-item>
 
               <a-asset-item
+                id="animated-asset-alice"
+                src="assets/asset-alice.gltf"
+              ></a-asset-item>
+
+              <a-asset-item
                 id="animated-asset-julia"
                 src="assets/asset-julia.glb"
               ></a-asset-item>
@@ -73,8 +78,16 @@
                     look-at="[gps-camera]"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset-julia"
-                    scale="1 1 1"
+                    scale="0.5 0.5 0.5"
                     gps-entity-place="latitude: 51.53540956431046; longitude: -0.12420944500263432;"
+                ></a-entity>
+
+                <a-entity
+                    look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset-alice"
+                    scale="1 1 1"
+                    gps-entity-place="latitude: 51.53540956431070; longitude: -0.12420944500263450;"
                 ></a-entity>
 
                 <a-entity
@@ -87,7 +100,7 @@
               <a-entity
                     look-at="[gps-camera]"
                     animation-mixer="loop: repeat"
-                    rotation="-90 0 0"
+                    rotation="90 0 0"
                     gltf-model="#india-asset"
                     scale="2.2957866146019565 2.2957866146019565 2.2957866146019565"
                     gps-entity-place="latitude: 51.53545223406967; longitude: -0.12577649205923083;"
@@ -103,8 +116,8 @@
                     smoothCount="10"
                     smoothTolerance="0.01"
                     smoothThreshold="5"
-                    autoplay="false"
-                    scale="5 5 5"
+                    autoplay="true"
+                    scale="50 50 50"
                     gps-entity-place="latitude: 51.53541795471287; longitude: -0.12374455993267476;"
                 ></a-video>
 
