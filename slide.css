@@ -7,8 +7,9 @@
     background-color: #eee;
     overflow-x: hidden;
     --poster-color: #eee;
-    height: 90%;
+    height: 100%;
     width: 70%;
+    margin-top: 0;
   }
 
   #ar-button {
@@ -54,22 +55,6 @@
     to   { transform: translateX(-100px); }
   }
 
-  model-viewer > #ar-prompt {
-    position: absolute;
-    left: 50%;
-    bottom: 175px;
-    animation: elongate 2s infinite ease-in-out alternate;
-    display: none;
-  }
-
-  model-viewer[ar-status="session-started"] > #ar-prompt {
-    display: block;
-  }
-
-  model-viewer > #ar-prompt > img {
-    animation: circle 4s linear infinite;
-  }
-
   .slider {
     width: 100%;
     text-align: center;
@@ -96,6 +81,7 @@
     background-position: center;
     background-color: #fff;
     margin-right: 10px;
+    margin-bottom: 4%;
     border-radius: 10px;
     border: none;
     display: flex;
@@ -126,7 +112,7 @@
     padding-top: 60px;
   }
   
-  .sidebar a {
+  .sidebar p {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 16px;
@@ -161,10 +147,38 @@
     background-color:#e0e0eb;
   }
   
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
+  .navbar {
+  background-color:purple;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 7.5%;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #8b4caf;
+  color: white;
+}
+
   
   /*On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size)*/
   @media only screen and (max-width: 768px) {
@@ -175,7 +189,7 @@
         background-color: #eee;
         overflow-x: hidden;
         --poster-color: #eee;
-        height: 90%;
+        height: 100%;
         width: 100%;
       }
   }

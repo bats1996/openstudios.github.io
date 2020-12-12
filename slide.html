@@ -18,23 +18,25 @@
     <body>
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="#">Title:</a>
-            <a href="#">Name</a>
-            <a href="#">Bio/Info/Whatever</a>
-            <a href="#">Social Media or Website</a>
+            <p>Title:</p>
+            <p>Name:</p>
+            <p>Bio/Info/Whatever:</p>
+            <p>Social Media or Website:</p>
         </div>
         
-        <div id="main">
+        
             <button class="openbtn" onclick="openNav()">☰ More Info</button>  
-        </div>
+        
 
         <script>
         function openNav() {
-            document.getElementById("mySidebar").style.width = "40%";
-        }
+            document.getElementById("mySidebar").style.width = "50%";
+            
+            }
         
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
+            
             }
         </script>
 
@@ -45,10 +47,7 @@
             View in your space
             </button>
         
-            <div id="ar-prompt">
-                <img src="assets/asset-flag.png">
-            </div>
-        
+            
             <div class="slider">
                 <div class="slides">
                     <button class="slide selected" onclick="switchSrc(this, 'asset-flag')" style="background-image: url('assets/asset-flag.png');">
@@ -82,5 +81,15 @@
             ev.preventDefault();
             });
         </script>
+
+
     </body>
+
+    <div class="navbar">
+        <a href="#modelViewer">Model Viewer</a> 
+        <a href="#film">Film</a>
+        <a href="#performance">Performance</a>
+        <a href="#donations">Donations</a>
+      </div>
+      
 </html> 
