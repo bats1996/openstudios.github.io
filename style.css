@@ -9,6 +9,18 @@ h1 {
     font: small-caps bold 6vw/1 sans-serif;
     }
 
+h2 {
+    color: white;
+    font: small-caps bold 6vw/1 sans-serif;
+    text-align: center;
+    }
+
+p {
+    color: white;
+    font: small-caps bold 3vw/1 sans-serif;
+    text-align: center;
+}
+
 .row{
     width:80%;
 }
@@ -27,6 +39,18 @@ h1 {
     margin-right: auto;
     width: 80%;
 }
+
+.full-height {
+    height: 100%;
+  }
+
+  
+ .fixed {
+    position: fixed;
+    bottom: 10;
+    right: 10;
+    
+  }
 
 @media only screen and (max-width: 768px) {
     h1 {
