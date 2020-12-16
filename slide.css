@@ -188,6 +188,12 @@
   color: white;
 }
 
+h1 {
+  color: white;
+  margin-left: 1%;
+  font: small-caps bold 2vw/1 sans-serif;
+  }
+
   
   /*On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size)*/
   @media only screen and (max-width: 768px) {
