@@ -1,0 +1,116 @@
+p{
+  text-align: center;
+  font-weight: 100;
+}
+
+.flag {
+    background-image: url('artusedtoexcitemeGIF.gif');
+    background-size: 100%;
+  }
+
+.shadow{
+  background-image: url('notEnoughSpace.png');
+  background-size: 100%;
+}
+
+a{
+  font-size: 50px;
+  margin-left: 10%;
+  color: #FFF;
+
+}
+
+.button{
+  transition-duration: 0.4s;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 70%;
+   
+  }
+
+.btn {
+    transition-duration: 0.4s;
+    font-size: 24px;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-block-start: 10px;
+    width: 10%;
+  }
+
+  #fade {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+  }
+  
+  #light {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 600px;
+    max-height: 360px;
+    margin-left: -300px;
+    margin-top: -180px;
+    border: 2px solid #FFF;
+    background: #FFF;
+    z-index: 1002;
+    overflow: visible;
+  }
+  
+  #boxclose {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    border-radius: 3px;
+    background: #222222;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    z-index: 1002;
+    opacity: 0.9;
+  }
+  
+  .boxclose:before {
+    content: "×";
+  }
+  
+  #fade:hover ~ #boxclose {
+    display:none;
+  }
+  
+  .test:hover ~ .test2 {
+    display: none;
+  }
+
+  .right {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    padding: 10px;
+  }
+
+  .bottomright {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+  }
